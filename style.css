@@ -36,45 +36,17 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px;
   text-decoration: none;
   color: var(--ink);
   flex-shrink: 0;
 }
-.mark {
-  height: 48px;
-  width: 46px;
-  display: flex;
-  align-items: flex-end;
-  gap: 3px;
-}
-.bar {
+.brand-logo {
   display: block;
-  width: 6px;
-  border-radius: 3px;
-  height: 15px;
+  width: 180px;
+  height: auto;
 }
-.bar.red { background: #ed5148; height: 15px; }
-.bar.yellow { background: #ffc928; height: 23px; }
-.bar.green { background: #31a95d; height: 30px; }
-.bar.blue { background: #4d87ed; height: 39px; }
-.bar.short { height: 18px; }
-.bar.mid { height: 25px; }
-.bar.tall { height: 45px; }
-.brand-words {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-.brand-words strong {
-  font: 800 26px 'Playfair Display', Georgia, serif;
-  letter-spacing: -.8px;
-}
-.brand-words small {
-  font-weight: 800;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 4px;
+.dark-logo {
+  display: none;
 }
 nav { display: flex; gap: 44px; }
 nav a, .footer-grid a, .footer-bottom a {
@@ -93,9 +65,24 @@ nav a:hover, .footer-grid a:hover, .footer-bottom a:hover { color: var(--accent)
   border: 0;
   background: transparent;
   color: #7d8795;
-  font-size: 30px;
   cursor: pointer;
-  line-height: 1;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  place-items: center;
+}
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.moon-icon {
+  display: none;
 }
 .apply {
   border: 0;
@@ -148,16 +135,16 @@ h1 {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 45px;
 }
 .detail {
   display: grid;
-  grid-template-columns: 24px auto auto;
+  grid-template-columns: 24px max-content max-content;
   align-items: center;
-  column-gap: 10px;
-  font-size: 17px;
+  column-gap: 12px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 .ico {
   width: 24px;
@@ -178,28 +165,20 @@ h1 {
 }
 .key, .value { white-space: nowrap; }
 .college { align-items: center; }
-.college .value { white-space: normal; max-width: 245px; }
+.college .value { white-space: normal; max-width: 290px; }
 
 .shape { position: absolute; pointer-events: none; }
 .half-circle-left {
-  width: 90px;
-  height: 90px;
-  left: -12px;
+  width: 43px;
+  height: 86px;
+  left: 0;
   top: 220px;
-  background: #ffd51c;
-  border-radius: 0 100px 100px 0;
-}
-.half-circle-right {
-  width: 110px;
-  height: 55px;
-  right: 1.2%;
-  top: 46px;
-  background: var(--pink);
-  border-radius: 100px 100px 0 0;
+  background: #ffdd0f;
+  border-radius: 0 50% 50% 0;
 }
 .waves {
   right: 15%;
-  top: 470px;
+  top: 220px;
   width: 90px;
   height: 54px;
 }
@@ -212,13 +191,20 @@ h1 {
 }
 .rings {
   position: absolute;
-  right: -188px;
-  top: 260px;
-  width: 360px;
-  height: 520px;
-  border: 2px solid #e6eaf0;
-  border-radius: 50%;
-  box-shadow: 0 0 0 16px var(--bg), 0 0 0 18px #e6eaf0, 0 0 0 34px var(--bg), 0 0 0 36px #e6eaf0, 0 0 0 52px var(--bg), 0 0 0 54px #e6eaf0;
+  right: -60px;
+  top: -110px;
+  width: 447px;
+  height: 711px;
+  background: url('https://skillcrafttech.com/images/shape-18.svg') center / contain no-repeat;
+  pointer-events: none;
+}
+.half-circle-right {
+  width: 130px;
+  height: 65px;
+  right: 2%;
+  bottom: 360px;
+  background: #f36a8d;
+  border-radius: 100px 100px 0 0;
 }
 
 footer { background: #fff; padding: 108px max(6.4vw, 28px) 31px; }
@@ -281,6 +267,10 @@ body.dark {
   --shadow: 0 22px 70px rgba(0, 0, 0, .25);
 }
 body.dark .site-header, body.dark footer { background: #202636; border-color: #333c4d; }
+body.dark .light-logo { display: none; }
+body.dark .dark-logo { display: block; }
+body.dark .sun-icon { display: none; }
+body.dark .moon-icon { display: block; }
 
 @media (max-width: 900px) {
   .site-header { gap: 30px; padding: 0 24px; }
@@ -291,20 +281,18 @@ body.dark .site-header, body.dark footer { background: #202636; border-color: #3
 }
 @media (max-width: 600px) {
   .site-header { height: 78px; gap: 8px; padding: 0 14px; }
-  .brand { gap: 7px; }
-  .brand-words strong { font-size: 20px; }
-  .brand-words small { font-size: 9px; }
-  .mark { transform: scale(.72); transform-origin: left center; width: 34px; }
+  .brand-logo { width: 124px; }
   nav { gap: 10px; }
   nav a { font-size: 12px; }
   .header-actions { gap: 7px; }
-  .theme-toggle { font-size: 22px; }
+  .theme-toggle { width: 28px; height: 28px; padding: 2px; }
+  .theme-toggle svg { width: 22px; height: 22px; }
   .apply { padding: 10px 12px; font-size: 13px; }
   main { padding: 75px 12px 90px; min-height: 850px; }
   .verification-card { width: 100%; padding: 62px 18px 55px; }
   h1 { font-size: 28px; margin-bottom: 55px; }
-  .details { gap: 28px; }
-  .detail { font-size: 14px; grid-template-columns: 22px auto auto; column-gap: 8px; }
+  .details { gap: 24px; }
+  .detail { font-size: 14px; grid-template-columns: 22px max-content max-content; column-gap: 10px; line-height: 1.45; }
   .ico, .ico svg { width: 20px; height: 20px; }
   .college .value { max-width: 185px; }
   footer { padding: 65px 24px 22px; }
