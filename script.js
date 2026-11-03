@@ -1,7 +1,6 @@
 const toggle = document.getElementById('themeToggle');
 toggle.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark');
-  toggle.textContent = isDark ? '☾' : '☼';
   toggle.setAttribute('aria-pressed', String(isDark));
 });
 
