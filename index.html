@@ -10,19 +10,23 @@
 <body>
   <header class="site-header">
     <a class="brand" href="https://skillcrafttech.com" aria-label="SkillCraft Technology home">
-      <span class="mark" aria-hidden="true">
-        <i class="bar red"></i><i class="bar yellow"></i><i class="bar green"></i>
-        <i class="bar blue"></i><i class="bar yellow short"></i><i class="bar green mid"></i>
-        <i class="bar blue tall"></i>
-      </span>
-      <span class="brand-words"><strong>SkillCraft</strong><small>TECHNOLOGY</small></span>
+      <img class="brand-logo light-logo" src="https://skillcrafttech.com/images/logo-light.svg" alt="SkillCraft Technology">
+      <img class="brand-logo dark-logo" src="https://skillcrafttech.com/images/logo-dark.svg" alt="" aria-hidden="true">
     </a>
     <nav aria-label="Main navigation">
       <a href="https://skillcrafttech.com">Home</a>
       <a href="https://skillcrafttech.com/verify">Verify</a>
     </nav>
     <div class="header-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" aria-pressed="false" title="Toggle theme">☼</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" aria-pressed="false" title="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+        </svg>
+      </button>
       <button class="apply" type="button" data-view="apply">Apply</button>
     </div>
   </header>
@@ -36,6 +40,7 @@
           </svg>
         </div>
         <div class="rings" aria-hidden="true"></div>
+        <div class="shape half-circle-right" aria-hidden="true"></div>
         <section class="verification-card" aria-labelledby="certificateHeading">
           <div class="card-accent"></div>
           <h1 id="certificateHeading">Verify Certificate</h1>
@@ -70,7 +75,6 @@
             </div>
           </div>
         </section>
-        <div class="shape half-circle-right" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -83,6 +87,7 @@
           </svg>
         </div>
         <div class="rings" aria-hidden="true"></div>
+        <div class="shape half-circle-right" aria-hidden="true"></div>
         <section class="verification-card verify-form-card" aria-labelledby="verifyHeading">
           <div class="card-accent"></div>
           <h1 id="verifyHeading">Verify Certificate</h1>
@@ -93,7 +98,6 @@
             <p class="form-message" id="certificateMessage" role="status" aria-live="polite"></p>
           </form>
         </section>
-        <div class="shape half-circle-right" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -106,6 +110,7 @@
           </svg>
         </div>
         <div class="rings" aria-hidden="true"></div>
+        <div class="shape half-circle-right" aria-hidden="true"></div>
         <section class="verification-card application-card" aria-labelledby="applicationHeading">
           <div class="card-accent"></div>
           <p class="eyebrow">SKILLCRAFT TECHNOLOGY</p>
@@ -137,7 +142,6 @@
             </p>
           </form>
         </section>
-        <div class="shape half-circle-right" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -227,12 +231,8 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="brand" href="https://skillcrafttech.com">
-          <span class="mark" aria-hidden="true">
-            <i class="bar red"></i><i class="bar yellow"></i><i class="bar green"></i>
-            <i class="bar blue"></i><i class="bar yellow short"></i><i class="bar green mid"></i>
-            <i class="bar blue tall"></i>
-          </span>
-          <span class="brand-words"><strong>SkillCraft</strong><small>TECHNOLOGY</small></span>
+          <img class="brand-logo light-logo" src="https://skillcrafttech.com/images/logo-light.svg" alt="SkillCraft Technology">
+          <img class="brand-logo dark-logo" src="https://skillcrafttech.com/images/logo-dark.svg" alt="" aria-hidden="true">
         </a>
         <p>Crafting Success through Technology</p>
         <div class="socials" aria-label="Social networks"><span>in</span><span>◎</span><span>♥</span></div>
