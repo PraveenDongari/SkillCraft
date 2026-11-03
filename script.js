@@ -53,17 +53,7 @@ showView();
 
 document.querySelectorAll('button[data-view="apply"]').forEach(button => {
   button.addEventListener('click', () => {
-    const internshipCard = button.closest('.internship-card');
-    if (internshipCard) {
-      const internship = internshipCard.querySelector('h3').textContent.trim();
-      document.getElementById('internshipTrack').value = internship;
-    }
-
-    if (window.location.hash === '#apply') {
-      showView();
-    } else {
-      window.location.hash = 'apply';
-    }
+    window.location.assign('https://docs.google.com/forms/d/e/1FAIpQLSe4rGPCBYF7FcwWjO5st47odd73qLxQomGOL_aZjii-V3Xnvg/viewform');
   });
 });
 
